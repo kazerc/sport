@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
- <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/theme.css">
-  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/form.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/form.css">
 	<meta charset="utf-8">
 	<title>Club de sport de l'IUT de Senart</title>
 
@@ -14,7 +12,7 @@
 
 
 
-<div id="equipe">
+<div id="register">
 
 
 
@@ -22,7 +20,7 @@
 
 			
 
-	<form method="POST" action="<?php site_url(''); ?>">
+	<form method="POST" action="<?php echo site_url('Data/okcreation'); ?>">
 
 	 <p>
 	 <label for="nomEquipe" class="nomEquipe"  > Nom de l'équipe:</label>

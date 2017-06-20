@@ -1,23 +1,26 @@
 <?php
 
-class Accueil_model {
+class Membre extends CI_Model {
   
   
 	public function __construct() {
-	
+		parent::__construct();
+  	$this->load->database();
 		$this->inscrireMembre();
 
 	}
   
 public function inscrireMembre(){
-    	$bdd = mysql_connect ('dwarves.iut-fbleau.fr', 'duboisc', '60f36d1201');
-mysql_select_db ('duboisc', $bdd) ;
+    	$bdd = mysqli_connect ('dwarves.iut-fbleau.fr', 'duboisc', '60f36d1201', 'duboisc');
+mysqli_select_db ($bdd,'duboisc') ;
 
 
 	// on insère le tuple (mysql_query) et au cas où, on écrira un petit message d'erreur si la requête ne se passe pas bien (or die)
-	mysql_query ("INSERT INTO Membre VALUES(' ','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['login']."','".$_POST['password']."','".$_POST['mail']."','".$_POST['avatar']."')") or die ('Erreur SQL !'.$sql.'<br />'.mysql_error());
+	mysqli_query ($bdd, "INSERT INTO Membre VALUES(' ','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['login']."','".$_POST['password']."','".$_POST['mail']."','".$_POST['avatar']."')") or die ('Erreur SQL !'.$sql.'<br />'.mysql_error());
 
-  	mysql_close();
+  	mysqli_close($bdd);
+	        $this->load->view("subscription");
+
   /* 
     if (isset($_POST["login"]) AND isset($_POST["password"]) AND isset($_POST["prenom"]) AND isset($_POST["nom"]) AND isset($_POST["mail"]) AND isset($_POST["mail"]) AND isset($_POST["avatar"]) )  {
   

@@ -1,6 +1,6 @@
 
 <div id="register">
-  <form  action="application/views/authenfication.php" autocomplete="off" method="POST" >
+  <form  action="<?php echo site_url('Data/connexion'); ?>" autocomplete="off" method="POST" >
     <h1 id="registerh1">Connexion</h1>
     <p> 
       <label for="login" class="login"  > Login </label>
@@ -19,11 +19,12 @@
     </p>
     <p class="change_link">
       Pas encore membre?
-      <a href="<?php echo site_url('Liens/inscri'); ?>" class="to_register">Rejoignez-nous</a>
       
-     <a href=<?php echo base_url()."Inscription/inscri/"?> class="to_register">Rejoignez-nous</a>
+     <a href="<?php echo site_url('Liens/subscribe'); ?>" class="to_register">Rejoignez-nous</a>
 
-<?php echo base_url()."Inscription/index/"?>>
+
+
+
     </p>
   </form>
 </div>

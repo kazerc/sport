@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/theme.css">
-    <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/form.css">
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/form.css">
     <meta charset="utf-8">
     <title>Club de sport de l'IUT de Senart</title>
   </head>
   <body>
-    <?php
-      include('header.php');
-      ?>
+     <?php include('header.php') ?>
+
     <div id="register">
       <form  action="models/event.php" autocomplete="on" method="POST">
         <h1 id="registerh1">Ajouter un evenement </h1>
@@ -21,11 +20,13 @@
         </p>
         <p> 
           <label for="debut" class="debut"  > Date de début</label>
-          <input type="date" id="debut" name ="debut" placeholder="format yyyy-mm-jj"/>
+          <input type="date" id="debut" name ="debut" placeholder="format yyyy-mm-jj"/> 
+          <input type="time" name="debut">
         </p>
         <p>
           <label for="fin" class="fin"  > Date de fin</label>
-          <input type="fin" id="fin" name ="fin" placeholder="format yyyy-mm-jj"/>
+          <input type="date" id="fin" name ="fin" placeholder="format yyyy-mm-jj"/>
+          <input type="time" name="debut">
         </p>
         <p>
           <label for="periodicite" class="periodicite"  > Périodicité</label>
@@ -49,8 +50,6 @@
         </p>
       </form>
     </div>
-    <?php
-      include('footer.php');
-      ?>
+    <?php   include('footer.php'); ?>
   </body>
 </html>

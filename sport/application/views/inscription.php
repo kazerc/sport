@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
  
-  <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/theme.css">
-  <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/form.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/form.css">
 	<meta charset="utf-8">
 	<title>Club de sport de l'IUT de Senart</title>
 
@@ -13,7 +13,8 @@
   <?php include('header.php') ?>
 
 <div id="register">
-  <form  action="<?php echo site_url('Accueil/inscriptionMembre'); ?>" autocomplete="on" method="POST">
+  
+  <form  action="<?php echo site_url('Data/okinscription'); ?>" autocomplete="on" method="POST">
     <h1 id="registerh1">Inscription </h1>
     <p> 
       <label for="nom" class="nom"  > Nom </label>

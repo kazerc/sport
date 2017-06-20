@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/theme.css">
-    <link rel="stylesheet" type="text/css" href="http://projet-christopherduboiis703078.codeanyapp.com/assets/css/form.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/form.css">
     <meta charset="utf-8">
     <title>Club de sport de l'IUT de Senart</title>
   </head>
@@ -12,10 +12,25 @@
       ?>
     <div id="register">
     
-    <form action="" method="post">
+    <form action="<?php echo site_url('Data/joinEquipe'); ?>" method="post">
         <select name="name">
+            <option value="-1"  selected="selected"></option>
+<?php 
+
+$connexion = mysqli_connect('localhost','duboisc','60f36d1201','duboisc');
+$req = mysqli_query($connexion,'SELECT DISTINCT nom FROM Equipe');
+$a = 0;
+foreach ($req as $equipe) {
+
+  echo '<option value=' .$a. '>'.$equipe['nom'].'</option>';
+  $a++;
+}
+
+?>
 
         
+
+
     </select>
 
 
