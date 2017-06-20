@@ -17,7 +17,7 @@
             <option value="-1"  selected="selected"></option>
 <?php 
 
-$connexion = mysqli_connect('localhost','duboisc','60f36d1201','duboisc');
+$connexion = mysqli_connect('dwarves.iut-fbleau.fr','duboisc','60f36d1201','duboisc');
 $req = mysqli_query($connexion,'SELECT DISTINCT nom FROM Equipe');
 $a = 0;
 foreach ($req as $equipe) {
