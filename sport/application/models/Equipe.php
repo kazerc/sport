@@ -17,8 +17,17 @@ class Equipe extends CI_Model {
 	
 public function creerEquipe(){
  
+$nomEquipe = $_POST['nomEquipe'];
+
 	$bdd = mysqli_connect ('dwarves.iut-fbleau.fr', 'duboisc', '60f36d1201', 'duboisc');
-mysqli_select_db ($bdd,'duboisc') ;
+	$req = mysqli_query($bdd, " SELECT idEquipe, nom FROM Equipe");
+
+foreach ($req as $reponse) {
+if ($nomEquipe == $reponse['nom']) {
+	$this->load->view('CreerEquipe');
+}
+}
+
 
 
 	// on insère le tuple (mysql_query) et au cas où, on écrira un petit message d'erreur si la requête ne se passe pas bien (or die)

@@ -1,8 +1,4 @@
-<?php
 
-session_start();
-
-?>
 
 <?php
 
@@ -28,12 +24,19 @@ mysqli_select_db ($bdd,'duboisc') ;
 
 $idEquipe = mysqli_query($bdd,"SELECT nom, motDePasse FROM Equipe;");
 
-
+foreach($idEquipe as $val) {
+if ($mdp == $val['motDePasse'] AND $nom == $val['nom']) {
+	$this->load->view("JoinEquipe");
+}
+else {
+	$this->load->view("main");
+}
+}
  
 
 		 
 
-
+/*
 	
 	    foreach($idEquipe as $valuE){
     if( $_POST['name']==$valuE['nom'] AND  $_POST['password']==$valuE['motDePasse']){
@@ -50,6 +53,8 @@ $join = mysqli_query($bdd, "INSERT INTO MembreEquipe VALUES (". $result['idEquip
 
 		$this->load->view('rejoindre');
 
+
+*/
 
 
 }
